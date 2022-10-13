@@ -12,7 +12,7 @@ def hello():
 	"""
 	Displays "Hello HBNB!"
 	"""
-	return 'Hello HBNH!'
+	return 'Hello HBNB!'
 
 
 if __name__ == '__main__':
