@@ -20,16 +20,19 @@ def hbnb():
 	"""
 	return 'HBNB'
 
-@app.route('/c/<text>', strict_slashes=False)
+@app.route('/c/<string:text>', strict_slashes=False)
 def c_route(text):
 	""" 
-	Displays C followed by the value of the text variable
+	Displays "C" followed by the value of the text variable
 	"""
 	return "C {}".format(text.replace('_', ' '))
 
-@app.route('/python/(<text>)', strict_slashes=False)
-def python_route(text):
-	text = 'is cool'
+@app.route('/python', strict_slashes=False)
+@app.route('/python/<string:text>', strict_slashes=False)
+def python_route(text='is_cool'):
+	"""
+	Displays "Python followed by the value of the text variable
+	"""
 	return "Python {}".format(text.replace('_', ' '))
 
 if __name__ == '__main__':
