@@ -9,10 +9,7 @@ app = Flask(__name__)
 
 @app.teardown_appcontext
 def appcontext_teardown(exc=None):
-    """called on teardown of app contexts,
-        for more info on contexts visit
-        -> http://flask.pocoo.org/docs/1.0/appcontext/
-        Storage.close() closes the sql scoped session or reloads file
+    """Storage.close() closes the sql scoped session or reloads file
             storage.
     """
     storage.close()
